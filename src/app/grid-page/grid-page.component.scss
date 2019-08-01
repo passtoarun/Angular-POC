@@ -1,0 +1,57 @@
+.grid-page-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px 20px 20px;
+    border: 1px solid #ddd;
+    background: rgba(255,255,255,.15);
+    position: relative;
+    top: 72px;
+    .grid-header {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        background: #eeeeeeb3;
+        font-weight: bold;
+        .grid-header-buttons { 
+            margin-left: auto;
+            button {
+                margin: 0 5px;
+                border-radius: 0;
+            }
+        }
+    }
+    .block {
+        .block-header {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            .collapse-btn {
+                margin-left: auto;
+                .btn:after {
+                    font-family: "Glyphicons Halflings";
+                    content: "\e114";
+                    float: right;
+                }
+                .btn.collapsed:after {
+                    content: "\e080";
+                }
+            }
+        }
+        .filter-content {
+            display: flex;
+            flex-wrap: wrap;
+            .form-group {
+                width: 33%;
+                padding: 0 20px;
+                box-sizing: border-box;
+            }
+        }
+        .block-content {
+            padding: 10px;
+        }
+    }
+}
+
+button {
+    border-radius: 0;
+}
