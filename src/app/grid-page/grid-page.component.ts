@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+declare var $: any;
 
 @Component({
   selector: 'app-grid-page',
@@ -8,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class GridPageComponent implements OnInit {
   title  = null;
+  startDate = null;
 
   constructor(private router: Router,
     private route: ActivatedRoute) {
@@ -19,6 +21,14 @@ export class GridPageComponent implements OnInit {
       {
         this.title = data.title;
       });
+  }
+
+  ngAfterContentInit() {
+    $('#datePicker').datepicker({
+      onSelect: (selectedDate) => {
+          this.startDate = selectedDate;
+      }
+  });
   }
 
 }
